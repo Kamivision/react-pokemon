@@ -9,11 +9,44 @@
   /* display: flex; */
   flex-direction: column;
   align-items: center;
-  height: 30vmin;
-  width: 15vmin;
-  border: 1vmin solid black;
+  /* height: 60vmin;
+  width: 20vmin; */
+  /* border: 1vmin solid black; */
   max-height: fit-content;
-  min-width: fit-content;
+  max-width: 151px;
   border-radius: 2vmin;
   background-color: blanchedalmond;
+  margin-bottom: 10%;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding-top: 5vmin;
+}
+
+#submitButton {
+  /* width: 20vmin; */
+  width: fit-content;
+  height: fit-content;
+  /* height: 10vmin; */
+  font-size: 2em;
+  border-radius: 2vmin;
+  border-color: white;
+  background-color: aqua;
+  margin-top: 1vmin;
+}
+
+#submitButton:hover {
+  background-color: blue;
+}
+
+#inputBox {
+  width: 30vmin;
+  height: 5vmin;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  border-radius: 2vmin;
 }

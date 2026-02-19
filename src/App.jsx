@@ -11,9 +11,14 @@ function App() {
     let h2 = document.createElement("h2")
     let img = document.createElement("img")
     img.src = data["sprites"]["front_shiny"]
-    h2.innerText = data["type"]
+    h2.innerText = data["types"][0]['type']['name']
     h3.innerText = data["name"]
     div.appendChild(img)
+    if (data['types'][1]){
+      let type2 = document.createElement('h2')
+      type2.innerText = data["types"][1]['type']['name']
+      div.appendChild(type2)
+    }
     div.appendChild(h2)
     div.appendChild(h3)
     container.appendChild(div)
@@ -23,7 +28,8 @@ function App() {
     let data = responseData['pokemon']
     console.log(data)
     //createTeamMember(data)
-    let pokeSelection = data[0]
+    let num = Math.floor(Math.random() * data.length)
+    let pokeSelection = data[num]
     console.log(pokeSelection)
     let name = pokeSelection['pokemon']['name']
     console.log(name)
@@ -64,10 +70,11 @@ function App() {
 
   return (
     <>
-      <h1>Pokemon Theme Team</h1>
+      <h1 id='header'>Pokemon Theme Team</h1>
     <form onSubmit= {(event)=>handleSubmit(event)}>
-        <input type='text' name='type' placeholder='Fairy'/>
-        <input type='submit' value='Search'/>
+        <input id='inputBox' type='text' name='type' placeholder='Fairy'/>
+        <br></br>
+        <input id='submitButton' type='submit' value='Search'/>
       </form>
       <div id='container'>
 
